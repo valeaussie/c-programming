@@ -16,11 +16,11 @@ double calc_balance(double starting_balance, retire_info info){
   return current_balance;
 }
 
-void retirement (int starting_age, double initial, retire_info working, retire_info retired){
+void retirement (int startAge, double initial, retire_info working, retire_info retired){
   double current_balance = initial;
-  int m = starting_age;
-  int retirement_age_in_months = starting_age + working.months;
-  int first_month = starting_age + working.months + 1;
+  int m = startAge;
+  int retirement_age_in_months = startAge + working.months;
+  int first_month = startAge + working.months + 1;
   int time_retired = retirement_age_in_months + retired.months -1;
   double first_balance;
 
@@ -59,10 +59,10 @@ int main(void) {
   retired.contribution = -4000;
   retired.rate_of_return = 0.01/12;
 
-  int starting_age = 327;
+  int startAge = 327;
   double initial = 21345;
 
-  retirement(starting_age, initial, working, retired);
+  retirement(startAge, initial, working, retired);
 
   return 0;
 }
